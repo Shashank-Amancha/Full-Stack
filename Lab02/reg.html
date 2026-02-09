@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Student Registration Form">
+  <title>Student Registration</title>
+</head>
+<body>
+
+  <header>
+    <h1>Student Registration</h1>
+    <p>Please fill out the form below to register as a student.</p>
+  </header>
+
+  <main>
+    <article>
+      <section>
+        <form action="/submit-registration" method="post">
+          <fieldset>
+            <legend>Personal information</legend>
+
+            <p>
+              <label for="firstName">First name:</label>
+              <input type="text" id="firstName" name="firstName" placeholder="e.g., Shashank" required>
+            </p>
+
+            <p>
+              <label for="lastName">Last name:</label>
+              <input type="text" id="lastName" name="lastName" placeholder="e.g., Amancha" required>
+            </p>
+
+            <p>
+              <label for="dob">Date of birth:</label>
+              <input type="date" id="dob" name="dob" required>
+            </p>
+
+            <p>
+              <label for="gender">Gender:</label>
+              <select id="gender" name="gender" required>
+                <option value="" selected disabled>Choose...</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="nonbinary">Non-binary</option>
+                <option value="prefer_not_say">Prefer not to say</option>
+                <option value="other">Other</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="nationality">Nationality:</label>
+              <input list="nationalities" id="nationality" name="nationality" placeholder="Start typing...">
+              <datalist id="nationalities">
+                <option value="Indian">
+                <option value="American">
+                <option value="British">
+                <option value="Canadian">
+                <option value="Australian">
+              </datalist>
+            </p>
+
+            <p>
+              <label for="photo">Upload photo:</label>
+              <input type="file" id="photo" name="photo" accept="image/*">
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Contact details</legend>
+
+            <p>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="name@example.com" required>
+            </p>
+
+            <p>
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91-XXXXXXXXXX" required>
+            </p>
+
+            <p>
+              <label for="address">Address:</label>
+              <textarea id="address" name="address" rows="3" placeholder="Street, City, State, PIN" required></textarea>
+            </p>
+
+            <p>
+              <label for="city">City:</label>
+              <input type="text" id="city" name="city" required>
+            </p>
+
+            <p>
+              <label for="state">State:</label>
+              <input type="text" id="state" name="state" required>
+            </p>
+
+            <p>
+              <label for="pin">PIN code:</label>
+              <input type="number" id="pin" name="pin" inputmode="numeric" required>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Academic information</legend>
+
+            <p>
+              <label for="roll">Roll number:</label>
+              <input type="text" id="roll" name="roll" required>
+            </p>
+
+            <p>
+              <label for="department">Department:</label>
+              <select id="department" name="department" required>
+                <option value="" selected disabled>Choose...</option>
+                <option value="cse">Computer Science</option>
+                <option value="ece">Electronics & Communication</option>
+                <option value="mech">Mechanical</option>
+                <option value="civil">Civil</option>
+                <option value="eee">Electrical</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="program">Program:</label>
+              <select id="program" name="program" required>
+                <option value="" selected disabled>Choose...</option>
+                <option value="btech">B.Tech</option>
+                <option value="mtech">M.Tech</option>
+                <option value="bsc">B.Sc</option>
+                <option value="msc">M.Sc</option>
+                <option value="phd">Ph.D</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="year">Year of study:</label>
+              <input type="number" id="year" name="year" min="1" max="6" required>
+            </p>
+
+            <p>
+              <label for="semester">Semester:</label>
+              <input type="number" id="semester" name="semester" min="1" max="12" required>
+            </p>
+
+            <p>
+              <label for="cgpa">Current CGPA:</label>
+              <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" placeholder="e.g., 8.25">
+            </p>
+
+            <p>
+              <label for="courses">Preferred elective:</label>
+              <input list="electives" id="courses" name="courses" placeholder="Start typing...">
+              <datalist id="electives">
+                <option value="Data Science">
+                <option value="AI & ML">
+                <option value="Cloud Computing">
+                <option value="Cybersecurity">
+                <option value="IoT Systems">
+              </datalist>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Guardian details</legend>
+
+            <p>
+              <label for="guardianName">Guardian name:</label>
+              <input type="text" id="guardianName" name="guardianName" required>
+            </p>
+
+            <p>
+              <label for="guardianPhone">Guardian phone:</label>
+              <input type="tel" id="guardianPhone" name="guardianPhone" required>
+            </p>
+
+            <p>
+              <label for="guardianEmail">Guardian email:</label>
+              <input type="email" id="guardianEmail" name="guardianEmail">
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Preferences</legend>
+
+            <p>
+              <span>Hostel required:</span><br>
+              <input type="radio" id="hostelYes" name="hostel" value="yes">
+              <label for="hostelYes">Yes</label>
+              <input type="radio" id="hostelNo" name="hostel" value="no" checked>
+              <label for="hostelNo">No</label>
+            </p>
+
+            <p>
+              <label for="transport">Transport:</label>
+              <select id="transport" name="transport">
+                <option value="" selected disabled>Choose...</option>
+                <option value="bus">College Bus</option>
+                <option value="self">Self-arranged</option>
+              </select>
+            </p>
+
+            <p>
+              <span>Clubs interested:</span><br>
+              <input type="checkbox" id="clubCoding" name="clubs" value="coding">
+              <label for="clubCoding">Coding</label>
+              <input type="checkbox" id="clubRobotics" name="clubs" value="robotics">
+              <label for="clubRobotics">Robotics</label>
+              <input type="checkbox" id="clubMusic" name="clubs" value="music">
+              <label for="clubMusic">Music</label>
+              <input type="checkbox" id="clubSports" name="clubs" value="sports">
+              <label for="clubSports">Sports</label>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Account setup</legend>
+
+            <p>
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" required>
+            </p>
+
+            <p>
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required>
+            </p>
+
+            <p>
+              <label for="confirmPassword">Confirm password:</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Additional information</legend>
+
+            <p>
+              <label for="about">Short bio:</label>
+              <textarea id="about" name="about" rows="4" placeholder="Tell us about yourself..."></textarea>
+            </p>
+
+            <details>
+              <summary>Terms and conditions</summary>
+              <p>By submitting this form, you confirm that the information provided is accurate and you agree to the institution’s policies.</p>
+            </details>
+
+            <p>
+              <input type="checkbox" id="agree" name="agree" required>
+              <label for="agree">I agree to the terms and conditions</label>
+            </p>
+          </fieldset>
+
+          <p>
+            <button type="submit">Register</button>
+            <button type="reset">Clear form</button>
+          </p>
+
+          <p>
+            <label for="referrer">How did you hear about us?</label>
+            <select id="referrer" name="referrer">
+              <option value="" selected disabled>Choose...</option>
+              <option value="friends">Friends/Family</option>
+              <option value="social">Social Media</option>
+              <option value="website">Website</option>
+              <option value="event">Campus Event</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="color">Favorite color (optional):</label>
+            <input type="color" id="color" name="color">
+          </p>
+
+          <p>
+            <label for="time">Preferred contact time:</label>
+            <input type="time" id="time" name="time">
+          </p>
+
+          <p>
+            <label for="url">Portfolio/LinkedIn URL (optional):</label>
+            <input type="url" id="url" name="url" placeholder="https://">
+          </p>
+
+          <p>
+            <label for="marksheet">Upload marksheet (PDF):</label>
+            <input type="file" id="marksheet" name="marksheet" accept="application/pdf">
+          </p>
+
+          <p>
+            <label for="hiddenToken">Form token (hidden):</label>
+            <input type="hidden" id="hiddenToken" name="token" value="ABC123">
+          </p>
+
+          <p>
+            <meter id="profileCompleteness" min="0" max="100" value="60">60%</meter>
+            <label for="profileCompleteness">Profile completeness (example)</label>
+          </p>
+
+          <p>
+            <progress id="uploadProgress" max="100" value="0"></progress>
+            <label for="uploadProgress">Upload progress (example)</label>
+          </p>
+
+        </form>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <small>&copy; 2026 Your Institution. All rights reserved.</small>
+  </footer>
+
+</body>
+</html>
