@@ -1,0 +1,69 @@
+.dashboard {
+  padding: 30px;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 200px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.income {
+  border-top: 5px solid #2ecc71;
+}
+
+.expense {
+  border-top: 5px solid #e74c3c;
+}
+
+.balance {
+  border-top: 5px solid #3498db;
+}
+
+.add-expense {
+  background: white;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-expense input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.add-expense button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
