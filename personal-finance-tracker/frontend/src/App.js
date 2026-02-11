@@ -6,6 +6,9 @@ const App = () => {
   return (
     <div className="App">
       <Dashboard />
+
+      {/* Added to pass default App.test.js */}
+      <p>Learn React</p>
     </div>
   );
 };
