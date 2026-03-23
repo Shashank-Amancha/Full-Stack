@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grades System</title>
+</head>
+<body>
+
+<h1>Student Grades System</h1>
+
+<!-- Add Grade -->
+<h2>Add Grade</h2>
+<input type="text" id="student_name" placeholder="Student Name">
+<input type="text" id="subject" placeholder="Subject">
+<input type="number" id="grade" placeholder="Grade">
+<button onclick="addGrade()">Add</button>
+
+<hr>
+
+<!-- View Grades -->
+<h2>All Grades</h2>
+<button onclick="getGrades()">Load Grades</button>
+<ul id="gradesList"></ul>
+
+<hr>
+
+<!-- Update Grade -->
+<h2>Update Grade</h2>
+<input type="text" id="update_id" placeholder="Grade ID">
+<input type="number" id="update_grade" placeholder="New Grade">
+<button onclick="updateGrade()">Update</button>
+
+<hr>
+
+<!-- Delete Grade -->
+<h2>Delete Grade</h2>
+<input type="text" id="delete_id" placeholder="Grade ID">
+<button onclick="deleteGrade()">Delete</button>
+
+<script>
+
+async function addGrade() {
+    const student_name = document.getElementById("student_name").value;
+    const subject = document.getElementById("subject").value;
+    const grade = document.getElementById("grade").value;
+
+    await fetch("http://localhost:5000/grades", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ student_name, subject, grade })
+    });
+
+    alert("Grade Added Successfully");
+}
+
+async function getGrades() {
+    const res = await fetch("http://localhost:5000/grades");
+    const data = await res.json();
+
+    const list = document.getElementById("gradesList");
+    list.innerHTML = "";
+
+    data.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `ID: ${item._id} | ${item.student_name} - ${item.subject} : ${item.grade}`;
+        list.appendChild(li);
+    });
+}
+
+async function updateGrade() {
+    const id = document.getElementById("update_id").value;
+    const grade = document.getElementById("update_grade").value;
+
+    await fetch(`http://localhost:5000/grades/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ grade })
+    });
+
+    alert("Grade Updated Successfully");
+}
+
+async function deleteGrade() {
+    const id = document.getElementById("delete_id").value;
+
+    await fetch(`http://localhost:5000/grades/${id}`, {
+        method: "DELETE"
+    });
+
+    alert("Grade Deleted Successfully");
+}
+
+</script>
+
+</body>
+</html>
